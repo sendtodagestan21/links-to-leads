@@ -36,6 +36,8 @@
   --shadow-lg: 0 20px 60px rgba(12, 31, 20, 0.14);
 
   --header-h: 72px;
+  --trust-bar-h: 42px;
+  --top-offset: calc(var(--trust-bar-h) + var(--header-h));
 }
 
 *, *::before, *::after {
@@ -174,15 +176,92 @@ h4 {
   font-size: 1.05rem;
 }
 
+.btn-xl {
+  padding: 1.15rem 2.25rem;
+  font-size: 1.12rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
 .btn-full {
   width: 100%;
+}
+
+/* ── Trust bar ── */
+
+.trust-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  height: var(--trust-bar-h);
+  background: var(--green-900);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  height: 100%;
+  overflow: hidden;
+}
+
+.trust-label {
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.trust-logos {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.trust-logo {
+  color: rgba(255, 255, 255, 0.55);
+  opacity: 0.85;
+  flex-shrink: 0;
+}
+
+.trust-logo svg {
+  height: 18px;
+  width: auto;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trust-icon {
+  color: var(--gold-400);
+  font-size: 0.75rem;
 }
 
 /* ── Header ── */
 
 .site-header {
   position: fixed;
-  top: 0;
+  top: var(--trust-bar-h);
   left: 0;
   right: 0;
   z-index: 100;
@@ -243,7 +322,7 @@ h4 {
 
 .hero {
   position: relative;
-  padding: calc(var(--header-h) + 4rem) 0 5rem;
+  padding: calc(var(--top-offset) + 3rem) 0 5rem;
   overflow: hidden;
   background: var(--green-950);
 }
@@ -285,14 +364,99 @@ h4 {
   color: var(--white);
 }
 
+/* Hero problem / solution */
+
+.hero-ps {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.hero-problem,
+.hero-solution {
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hero-problem {
+  background: rgba(192, 57, 43, 0.08);
+  border-color: rgba(192, 57, 43, 0.2);
+}
+
+.hero-solution {
+  background: rgba(79, 155, 109, 0.1);
+  border-color: rgba(79, 155, 109, 0.25);
+}
+
+.ps-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.hero-problem .ps-label {
+  color: #e88a7a;
+}
+
+.hero-solution .ps-label {
+  color: var(--green-400);
+}
+
+.hero-problem p,
+.hero-solution p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.hero-solution strong {
+  color: var(--white);
+}
+
+.hero-greed {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 1.75rem;
+  max-width: 540px;
+  padding-left: 1rem;
+  border-left: 3px solid var(--gold-500);
+}
+
+.hero-greed strong {
+  color: var(--gold-300);
+}
+
 .hero-cta {
   margin-bottom: 2.5rem;
 }
 
 .cta-note {
-  margin-top: 0.75rem;
+  margin-top: 0.85rem;
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.45);
+}
+
+.cta-note strong {
+  color: var(--gold-400);
+}
+
+.section-greed {
+  font-size: 1.05rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+  margin-bottom: 2.5rem;
+  max-width: 620px;
+}
+
+.section-greed-center {
+  text-align: center;
+  margin-inline: auto;
 }
 
 .hero-stats {
@@ -479,7 +643,12 @@ h4 {
 }
 
 .problem h2 {
-  margin-bottom: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.problem .section-greed {
+  margin-inline: auto;
+  text-align: center;
 }
 
 .problem-grid {
@@ -897,7 +1066,17 @@ h4 {
 @media (max-width: 900px) {
   .nav { display: none; }
 
+  .trust-label { display: none; }
+
+  .trust-logos {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .trust-badge:last-child { display: none; }
+
   .hero-grid,
+  .hero-ps,
   .steps,
   .proof-grid,
   .compare,
@@ -928,9 +1107,18 @@ h4 {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --trust-bar-h: 36px;
+  }
+
   .container,
   .narrow {
     width: calc(100% - 1.5rem);
+  }
+
+  .trust-logo:nth-child(3),
+  .trust-logo:nth-child(4) {
+    display: none;
   }
 
   .hero {
@@ -943,5 +1131,10 @@ h4 {
 
   .header-cta {
     display: none;
+  }
+
+  .btn-xl {
+    width: 100%;
+    text-align: center;
   }
 }
