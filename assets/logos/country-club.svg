@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 40" role="img" aria-label="Country Club">
+  <rect width="140" height="40" rx="6" fill="#1e293b"/>
+  <path d="M20 30 C20 22 14 18 14 12 C14 8 17 6 20 6 C23 6 26 8 26 12 C26 18 20 22 20 30Z" fill="none" stroke="#c9a84c" stroke-width="1.5"/>
+  <line x1="20" y1="30" x2="20" y2="34" stroke="#c9a84c" stroke-width="1.5"/>
+  <text x="78" y="17" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="9" font-weight="700">COUNTRY</text>
+  <text x="78" y="29" text-anchor="middle" fill="#c9a84c" font-family="Arial,sans-serif" font-size="9" font-weight="700">CLUB</text>
+</svg>

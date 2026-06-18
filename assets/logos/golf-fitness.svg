@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130 40" role="img" aria-label="Golf Fitness">
+  <rect width="130" height="40" rx="6" fill="#142b1c"/>
+  <circle cx="18" cy="28" r="3" fill="#c9a84c"/>
+  <path d="M18 28 L18 10" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"/>
+  <path d="M18 10 Q24 8 26 12" fill="none" stroke="#6db88a" stroke-width="1.5"/>
+  <rect x="8" y="14" width="4" height="10" rx="1" fill="#6db88a"/>
+  <rect x="26" y="14" width="4" height="10" rx="1" fill="#6db88a"/>
+  <text x="72" y="17" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-size="9" font-weight="700">GOLF</text>
+  <text x="72" y="29" text-anchor="middle" fill="#6db88a" font-family="Arial,sans-serif" font-size="9" font-weight="700">FITNESS</text>
+</svg>

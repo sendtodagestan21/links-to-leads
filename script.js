@@ -1,12 +1,10 @@
-// Links to Leads — lead capture + modal
+// Links to Leads — lead capture
 
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".site-header");
   const modal = document.getElementById("lead-modal");
-  const heroFormAnchor = document.getElementById("book");
-  const desktopQuery = window.matchMedia("(min-width: 901px)");
+  const heroForm = document.getElementById("book");
 
-  // Header shadow on scroll
   window.addEventListener(
     "scroll",
     () => {
@@ -16,45 +14,40 @@ document.addEventListener("DOMContentLoaded", () => {
     { passive: true }
   );
 
-  // Modal controls
-  const openModal = () => {
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-    modal.querySelector("input")?.focus();
+  const scrollToForm = () => {
+    if (!heroForm) return;
+    heroForm.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => {
+      document.querySelector("#hero-form input")?.focus();
+    }, 400);
   };
 
+  document.querySelectorAll('a[href="#book"], .header-cta').forEach((el) => {
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+      scrollToForm();
+    });
+  });
+
   const closeModal = () => {
+    if (!modal) return;
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
   };
 
-  document.querySelectorAll("[data-open-lead-modal]").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (desktopQuery.matches && heroFormAnchor) {
-        heroFormAnchor.scrollIntoView({ behavior: "smooth", block: "start" });
-        setTimeout(() => {
-          document.querySelector("#hero-form input")?.focus();
-        }, 400);
-        return;
-      }
-      openModal();
+  if (modal) {
+    document.querySelectorAll("[data-close-lead-modal]").forEach((el) => {
+      el.addEventListener("click", closeModal);
     });
-  });
 
-  document.querySelectorAll("[data-close-lead-modal]").forEach((el) => {
-    el.addEventListener("click", closeModal);
-  });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
+  }
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-open")) {
-      closeModal();
-    }
-  });
-
-  // All lead forms
   const handleSubmit = (form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -65,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.style.color = "white";
       btn.disabled = true;
 
-      if (modal.classList.contains("is-open")) {
+      if (modal?.classList.contains("is-open")) {
         setTimeout(closeModal, 2500);
       }
 
@@ -81,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll(".lead-form").forEach(handleSubmit);
 
-  // Scroll reveal
   const revealEls = document.querySelectorAll(
     ".step, .testimonial, .problem-card, .compare-col, .faq-item"
   );

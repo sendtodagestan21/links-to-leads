@@ -14,44 +14,27 @@
   <!-- Trust bar -->
   <div class="trust-bar" aria-label="Trusted by golf fitness professionals">
     <div class="container trust-bar-inner">
-      <span class="trust-label">Trusted by golf fitness trainers at</span>
-      <ul class="trust-logos" aria-label="Partner and certification logos">
-        <li class="trust-logo" title="TPI Certified Trainers">
-          <svg viewBox="0 0 80 24" aria-hidden="true"><text x="0" y="18" fill="currentColor" font-family="DM Sans, sans-serif" font-size="16" font-weight="700">TPI</text></svg>
-        </li>
-        <li class="trust-logo" title="PGA Professionals">
-          <svg viewBox="0 0 80 24" aria-hidden="true"><text x="0" y="18" fill="currentColor" font-family="DM Sans, sans-serif" font-size="16" font-weight="700">PGA</text></svg>
-        </li>
-        <li class="trust-logo" title="Country Clubs">
-          <svg viewBox="0 0 120 24" aria-hidden="true"><text x="0" y="18" fill="currentColor" font-family="DM Sans, sans-serif" font-size="13" font-weight="600">Country Clubs</text></svg>
-        </li>
-        <li class="trust-logo" title="Golf Fitness Alliance">
-          <svg viewBox="0 0 110 24" aria-hidden="true"><text x="0" y="18" fill="currentColor" font-family="DM Sans, sans-serif" font-size="13" font-weight="600">Golf Fitness</text></svg>
-        </li>
-        <li class="trust-badge">
-          <span class="trust-icon" aria-hidden="true">★</span>
-          <span>4.9/5 Trainer Rating</span>
-        </li>
-        <li class="trust-badge">
-          <span class="trust-icon" aria-hidden="true">✓</span>
-          <span>200+ Trainers Served</span>
-        </li>
+      <span class="trust-label">Trusted at</span>
+      <ul class="logo-strip logo-strip--bar" aria-label="Partner logos">
+        <li><img src="assets/logos/tpi.svg" alt="TPI" width="90" height="30" /></li>
+        <li><img src="assets/logos/pga.svg" alt="PGA" width="90" height="30" /></li>
+        <li><img src="assets/logos/country-club.svg" alt="Country Club" width="100" height="30" /></li>
+        <li><img src="assets/logos/golf-fitness.svg" alt="Golf Fitness" width="95" height="30" /></li>
       </ul>
+      <div class="trust-bar-badges">
+        <span class="trust-badge"><span class="trust-icon" aria-hidden="true">★</span> 4.9/5</span>
+        <span class="trust-badge"><span class="trust-icon" aria-hidden="true">✓</span> 200+ Trainers</span>
+      </div>
     </div>
   </div>
 
-  <header class="site-header">
+  <header class="site-header site-header--minimal">
     <div class="container header-inner">
-      <a href="#" class="logo">
+      <a href="#top" class="logo">
         <span class="logo-mark" aria-hidden="true">⛳</span>
         <span class="logo-text">Links<span class="logo-accent">to</span>Leads</span>
       </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#how-it-works">How It Works</a>
-        <a href="#proof">Results</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-      <a href="#book" class="btn btn-sm btn-primary header-cta" data-open-lead-modal>Book Free Strategy Call →</a>
+      <a href="#book" class="btn btn-sm btn-primary header-cta">Book Free Call →</a>
     </div>
   </header>
 
@@ -60,14 +43,71 @@
     <section class="hero" id="top">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Golf Fitness Trainers · Or Ready to Switch</p>
-          <h1>Stop chasing broke clients. <em>Switch to golf fitness</em> — or scale the golf roster you already have.</h1>
+        <p class="eyebrow hero-item hero-eyebrow">Golf Fitness Trainers · Or Ready to Switch</p>
 
+        <h1 class="hero-item hero-title">Stop chasing broke clients. <em>Switch to golf fitness</em> — or scale the roster you have.</h1>
+
+        <div class="hero-item hero-logos-wrap">
+          <p class="logo-strip-label">Trusted by trainers at</p>
+          <ul class="logo-strip logo-strip--hero" aria-label="Partner logos">
+            <li><img src="assets/logos/tpi.svg" alt="TPI Performance" width="100" height="34" /></li>
+            <li><img src="assets/logos/pga.svg" alt="PGA" width="100" height="34" /></li>
+            <li><img src="assets/logos/country-club.svg" alt="Country Club" width="110" height="34" /></li>
+            <li><img src="assets/logos/golf-fitness.svg" alt="Golf Fitness" width="105" height="34" /></li>
+          </ul>
+          <div class="hero-trust-stats">
+            <span><strong>★ 4.9/5</strong> rating</span>
+            <span><strong>200+</strong> trainers</span>
+            <span><strong>Free</strong> call</span>
+          </div>
+        </div>
+
+        <div class="hero-item hero-form-wrap" id="book">
+          <div class="hero-form-card">
+            <div class="form-card-header">
+              <p class="form-card-eyebrow">Free Strategy Call</p>
+              <h2 class="form-card-title">Book your call — see how many paying golfers are in <em>your</em> market</h2>
+            </div>
+            <form class="lead-form lead-form--compact" id="hero-form" action="#" method="POST">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hero-name">Full Name</label>
+                  <input type="text" id="hero-name" name="name" placeholder="Jordan Smith" required />
+                </div>
+                <div class="form-group">
+                  <label for="hero-email">Email</label>
+                  <input type="email" id="hero-email" name="email" placeholder="you@example.com" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="hero-phone">Phone</label>
+                  <input type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" required />
+                </div>
+                <div class="form-group">
+                  <label for="hero-location">City / Market</label>
+                  <input type="text" id="hero-location" name="location" placeholder="Naples, FL" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="hero-type">Which best describes you?</label>
+                <select id="hero-type" name="trainer_type" required>
+                  <option value="" disabled selected>Select one…</option>
+                  <option value="golf-fitness">Already a golf fitness trainer</option>
+                  <option value="switching">Fitness trainer switching to golf</option>
+                  <option value="becoming">Want to become a golf fitness trainer</option>
+                </select>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg btn-full">Book My Free Strategy Call →</button>
+              <p class="form-note">🔒 Private · No spam · Limited spots weekly</p>
+            </form>
+          </div>
+        </div>
+
+        <div class="hero-item hero-below-fold">
           <p class="hero-lead">
-            <strong>The problem:</strong> Generic trainers fight for $30 sessions. <strong>The opportunity:</strong> Golfers pay $200+ and stay for years. Whether you're already in golf fitness or ready to make the switch — we'll show you how to fill your calendar with clients who can actually afford you.
+            <strong>The problem:</strong> Generic trainers fight for $30 sessions. <strong>The opportunity:</strong> Golfers pay $200+ and stay for years — whether you're scaling golf fitness or making the switch.
           </p>
-
           <ul class="hero-savepoints">
             <li>
               <span class="savepoint-icon" aria-hidden="true">✓</span>
@@ -79,71 +119,13 @@
             </li>
             <li>
               <span class="savepoint-icon" aria-hidden="true">✓</span>
-              <span><strong>3–5 year client retention</strong> — golfers don't ghost after week one</span>
+              <span><strong>3–5 year retention</strong> — golfers don't ghost after week one</span>
             </li>
             <li>
               <span class="savepoint-icon" aria-hidden="true">✓</span>
-              <span><strong>New niche, same skills</strong> — perfect if you're switching from general fitness</span>
+              <span><strong>Switch-ready</strong> — same skills, better-paying niche</span>
             </li>
           </ul>
-
-          <div class="hero-trust-row" aria-label="Trust indicators">
-            <ul class="hero-trust-logos">
-              <li>TPI</li>
-              <li>PGA</li>
-              <li>Country Clubs</li>
-              <li>Golf Fitness</li>
-            </ul>
-            <div class="hero-trust-stats">
-              <span><strong>★ 4.9/5</strong> trainer rating</span>
-              <span><strong>200+</strong> trainers served</span>
-              <span><strong>Free</strong> strategy call</span>
-            </div>
-          </div>
-
-          <div class="hero-cta-mobile">
-            <button type="button" class="btn btn-primary btn-xl btn-full" data-open-lead-modal>Book My Free Strategy Call →</button>
-            <p class="cta-note">30 minutes · Limited spots weekly · No obligation</p>
-          </div>
-        </div>
-
-        <div class="hero-form-wrap">
-          <div class="hero-form-card" id="book">
-            <div class="form-card-header">
-              <p class="form-card-eyebrow">Free Strategy Call</p>
-              <h2 class="form-card-title">See how many paying golfers are in <em>your</em> market</h2>
-              <p class="form-card-sub">Already a golf fitness trainer? We'll help you scale. Ready to switch? We'll map your path in.</p>
-            </div>
-            <form class="lead-form" id="hero-form" action="#" method="POST">
-              <div class="form-group">
-                <label for="hero-name">Full Name</label>
-                <input type="text" id="hero-name" name="name" placeholder="Jordan Smith" required />
-              </div>
-              <div class="form-group">
-                <label for="hero-email">Email</label>
-                <input type="email" id="hero-email" name="email" placeholder="you@example.com" required />
-              </div>
-              <div class="form-group">
-                <label for="hero-phone">Phone</label>
-                <input type="tel" id="hero-phone" name="phone" placeholder="(555) 123-4567" required />
-              </div>
-              <div class="form-group">
-                <label for="hero-location">City / Market</label>
-                <input type="text" id="hero-location" name="location" placeholder="e.g. Naples, FL" required />
-              </div>
-              <div class="form-group">
-                <label for="hero-type">Which best describes you?</label>
-                <select id="hero-type" name="trainer_type" required>
-                  <option value="" disabled selected>Select one…</option>
-                  <option value="golf-fitness">I'm already a golf fitness trainer</option>
-                  <option value="switching">I'm a fitness trainer switching to golf</option>
-                  <option value="becoming">I want to become a golf fitness trainer</option>
-                </select>
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg btn-full">Book My Free Strategy Call →</button>
-              <p class="form-note">🔒 Your info stays private. No spam, ever.</p>
-            </form>
-          </div>
         </div>
       </div>
     </section>
