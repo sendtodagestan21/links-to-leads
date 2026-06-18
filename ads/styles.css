@@ -1,0 +1,523 @@
+/* Links to Leads — Ad Creative Styles */
+/* Export size: 1080×1080 */
+
+:root {
+  --green-950: #0c1f14;
+  --green-900: #142b1c;
+  --green-800: #1e3d2a;
+  --green-600: #3d7a56;
+  --green-400: #6db88a;
+  --gold-500: #c9a84c;
+  --gold-400: #dbbf6a;
+  --gold-300: #e8d49a;
+  --white: #ffffff;
+  --red-soft: #e88a7a;
+  --font: "DM Sans", system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  background: #111;
+  color: #fff;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.page-header h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+.page-header .hint {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+}
+
+.page-header code {
+  background: #222;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+}
+
+.ad-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.ad-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ad-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold-400);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Base ad canvas 1080×1080 scaled to 400px preview ── */
+.ad {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  background: var(--green-950);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* Scale factor note: 400/1080 — for export use transform scale(2.7) or screenshot at 1080 */
+
+.ad-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.ad-brand {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.02em;
+}
+
+.ad-brand--bottom {
+  margin-top: auto;
+  text-align: center;
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+}
+
+.ad-spots {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--green-950);
+  background: var(--gold-500);
+  padding: 4px 8px;
+  border-radius: 100px;
+}
+
+.ad-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green-400);
+  margin-bottom: 8px;
+}
+
+.ad-eyebrow--gold { color: var(--gold-400); }
+
+.ad-headline {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.ad-headline em {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-300);
+}
+
+.ad-headline--center { text-align: center; }
+.ad-headline--huge { font-size: 34px; }
+.ad-headline--small { font-size: 22px; margin-top: 8px; }
+
+.ad-sub {
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255,255,255,0.72);
+  margin-bottom: 14px;
+}
+
+.ad-sub--large { font-size: 13px; }
+.ad-sub--center { text-align: center; }
+.ad-sub strong { color: var(--white); }
+
+.ad-cta {
+  margin-top: auto;
+  background: linear-gradient(135deg, var(--gold-500), var(--gold-400));
+  color: var(--green-950);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.35);
+}
+
+.ad-cta--large {
+  font-size: 13px;
+  padding: 14px 20px;
+}
+
+.ad-footer {
+  font-size: 9px;
+  color: rgba(255,255,255,0.4);
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* AD 1 — Split visual */
+.ad-visual--split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+  flex: 1;
+}
+
+.split-left, .split-right {
+  flex: 1;
+  padding: 14px 8px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.split-left {
+  background: rgba(192,57,43,0.12);
+  border: 1px solid rgba(192,57,43,0.25);
+}
+
+.split-right {
+  background: rgba(79,155,109,0.12);
+  border: 1px solid rgba(79,155,109,0.3);
+}
+
+.split-icon { font-size: 22px; }
+.split-label { font-size: 9px; font-weight: 600; color: rgba(255,255,255,0.7); }
+.split-x { color: var(--red-soft); font-weight: 700; font-size: 14px; }
+.split-check { color: var(--green-400); font-weight: 700; font-size: 14px; }
+.split-arrow { color: var(--gold-400); font-weight: 700; font-size: 16px; }
+
+/* AD 2 — Scarcity */
+.ad-2 {
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(160deg, var(--green-950), var(--green-900));
+}
+
+.ad-badge {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-400);
+  border: 1px solid rgba(201,168,76,0.4);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 12px;
+}
+
+.ad-spots-big {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--gold-500);
+  text-shadow: 0 0 40px rgba(201,168,76,0.3);
+}
+
+.ad-spots-label {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--white);
+  margin-bottom: 14px;
+}
+
+.ad-bullets {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.ad-bullets li {
+  font-size: 11px;
+  color: rgba(255,255,255,0.75);
+  padding: 6px 0 6px 18px;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.ad-bullets li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--green-400);
+  font-weight: 700;
+}
+
+/* AD 3 — Stats */
+.ad-stat-row {
+  display: flex;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.ad-stat {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 12px;
+  text-align: center;
+}
+
+.ad-stat-num {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold-400);
+}
+
+.ad-stat-label {
+  font-size: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.45);
+}
+
+/* AD 4 — Opportunity */
+.ad-4 { position: relative; }
+
+.ad-glow {
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(201,168,76,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.ad-logos {
+  display: flex;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.ad-logos span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.4);
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+}
+
+/* AD 5 — Club cards */
+.ad-visual--club {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 8px 0;
+  flex: 1;
+}
+
+.club-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+}
+
+.club-icon { font-size: 18px; }
+
+.club-card div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.club-card strong { font-size: 11px; color: var(--white); }
+.club-card span { font-size: 8px; color: rgba(255,255,255,0.45); }
+
+.club-tag {
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--green-400);
+  background: rgba(79,155,109,0.15);
+  padding: 3px 8px;
+  border-radius: 100px;
+}
+
+/* AD 6 — Compare */
+.ad-6 { align-items: center; text-align: center; }
+
+.ad-compare {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin: 14px 0;
+}
+
+.compare-item {
+  flex: 1;
+  padding: 14px 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compare-item span { font-size: 9px; text-transform: uppercase; letter-spacing: 0.06em; }
+.compare-item strong { font-size: 11px; }
+
+.compare-bad {
+  background: rgba(192,57,43,0.1);
+  border: 1px solid rgba(192,57,43,0.2);
+  color: var(--red-soft);
+}
+
+.compare-good {
+  background: rgba(79,155,109,0.1);
+  border: 1px solid rgba(79,155,109,0.25);
+  color: var(--green-400);
+}
+
+.compare-bad strong { color: #f0a090; }
+.compare-good strong { color: var(--green-400); }
+
+/* AD 7 — Direct */
+.ad-7 {
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(180deg, var(--green-950) 0%, #0a1810 100%);
+}
+
+.ad-logo-big {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+.ad-spots-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 8px 14px;
+  border-radius: 100px;
+  margin: 12px 0;
+}
+
+.ad-spots-pill strong { color: var(--gold-300); }
+
+.pulse {
+  width: 8px;
+  height: 8px;
+  background: var(--gold-500);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.ad-url {
+  font-size: 10px;
+  color: var(--gold-400);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+/* AD 8 — Quote */
+.ad-quote {
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--gold-500);
+  padding: 12px 14px;
+  margin: 8px 0 10px;
+  border-radius: 0 10px 10px 0;
+}
+
+.ad-quote p {
+  font-size: 11px;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 6px;
+}
+
+.ad-quote footer {
+  font-size: 9px;
+  color: rgba(255,255,255,0.45);
+}
+
+.ad-trust {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 10px;
+  font-size: 9px;
+  color: rgba(255,255,255,0.5);
+}
+
+.ad-trust span strong,
+.ad-trust span:first-child { color: var(--gold-400); }
+
+/* ── Full-size export mode ── */
+@media print {
+  body { background: white; padding: 0; }
+  .page-header { display: none; }
+  .ad-gallery { display: block; }
+  .ad-wrap { page-break-after: always; margin-bottom: 0; }
+  .ad-label { display: none; }
+  .ad {
+    width: 1080px;
+    height: 1080px;
+    transform: none;
+    border-radius: 0;
+    padding: 76px 70px;
+  }
+  .ad-headline { font-size: 76px; }
+  .ad-headline--huge { font-size: 92px; }
+  .ad-headline--small { font-size: 60px; }
+  .ad-sub { font-size: 32px; }
+  .ad-cta { font-size: 32px; padding: 32px 42px; }
+}
