@@ -13,9 +13,11 @@
 <body>
   <!-- Ambient background -->
   <div class="ambient" aria-hidden="true">
-    <div class="ambient-orb ambient-orb--1"></div>
-    <div class="ambient-orb ambient-orb--2"></div>
+    <div class="ambient-orb ambient-orb--1" data-parallax="0.15"></div>
+    <div class="ambient-orb ambient-orb--2" data-parallax="0.08"></div>
+    <div class="ambient-orb ambient-orb--3" data-parallax="0.12"></div>
     <div class="ambient-grid"></div>
+    <div class="ambient-beams"></div>
   </div>
 
   <!-- Nav -->
@@ -64,7 +66,7 @@
       <div class="container hero-layout">
         <div class="hero-content">
           <div class="badge-row fade-up">
-            <span class="badge badge-gold">10 Launch Spots</span>
+            <span class="badge badge-launch"><span class="pulse-dot"></span>10 Launch Spots</span>
             <span class="badge badge-outline">Golf Fitness · Or Switching</span>
           </div>
 
@@ -93,7 +95,7 @@
         </div>
 
         <div class="hero-form-col fade-up delay-2" id="book">
-          <div class="form-card glass-strong">
+          <div class="form-card glass-strong form-glow">
             <div class="form-card-head">
               <span class="form-eyebrow">Free Strategy Call</span>
               <h2>See how many paying golfers are in <em>your</em> market</h2>
@@ -128,7 +130,7 @@
                   <option value="becoming">Want to become a golf fitness trainer</option>
                 </select>
               </div>
-              <button type="submit" class="btn btn-primary btn-lg btn-full">Book My Free Strategy Call</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-full btn-shimmer">Book My Free Strategy Call</button>
               <p class="form-foot">Private · No spam · Limited spots weekly</p>
             </form>
           </div>
@@ -143,22 +145,22 @@
           <span class="section-label">The Problem</span>
           <h2>Your skills aren't the issue.<br /><span class="text-muted">Your clients are.</span></h2>
         </div>
-        <div class="bento bento-3 reveal">
-          <article class="bento-card bento-card--wide glass">
+        <div class="bento bento-3 reveal stagger-group">
+          <article class="bento-card bento-card--wide glass stagger-item">
             <span class="bento-icon bento-icon--bad">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
             <h3>Discount leads</h3>
             <p>Haggle on price, no-show, and never come back after one $30 session.</p>
           </article>
-          <article class="bento-card glass">
+          <article class="bento-card glass stagger-item">
             <span class="bento-icon bento-icon--bad">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
             <h3>Wrong audience</h3>
             <p>Posting ab videos while golfers pay swing coaches $150/hr.</p>
           </article>
-          <article class="bento-card glass">
+          <article class="bento-card glass stagger-item">
             <span class="bento-icon bento-icon--bad">
               <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 5l10 10M15 5L5 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </span>
@@ -176,28 +178,28 @@
           <span class="section-label">The System</span>
           <h2>3 moves to a roster of golfers<br /><span class="text-gradient">who actually pay.</span></h2>
         </div>
-        <div class="bento bento-steps reveal">
-          <article class="bento-card bento-card--step glass">
+        <div class="bento bento-steps reveal stagger-group">
+          <article class="bento-card bento-card--step glass stagger-item">
             <span class="step-num">01</span>
             <h3>Reposition</h3>
             <p>Sell yards, rotation, and pain-free rounds — not "training sessions."</p>
           </article>
-          <article class="bento-card bento-card--step glass">
+          <article class="bento-card bento-card--step glass stagger-item">
             <span class="step-num">02</span>
             <h3>Plug In</h3>
             <p>Pro shops, club newsletters, league captains — not the fitness feed.</p>
           </article>
-          <article class="bento-card bento-card--step glass">
+          <article class="bento-card bento-card--step glass stagger-item">
             <span class="step-num">03</span>
             <h3>Book Solid</h3>
             <p>Retainers and foursome referrals. One golfer at a club beats ten gym leads.</p>
           </article>
-          <article class="bento-card bento-card--stat glass">
-            <span class="stat-value">$200+</span>
+          <article class="bento-card bento-card--stat glass stagger-item">
+            <span class="stat-value" data-count="200">$200+</span>
             <span class="stat-label">avg session rate</span>
           </article>
-          <article class="bento-card bento-card--stat glass">
-            <span class="stat-value">4×</span>
+          <article class="bento-card bento-card--stat glass stagger-item">
+            <span class="stat-value" data-count="4">4×</span>
             <span class="stat-label">referral rate</span>
           </article>
         </div>
@@ -211,15 +213,15 @@
           <span class="section-label">Results</span>
           <h2>Other trainers are booking your<br /><span class="text-muted">dream clients right now.</span></h2>
         </div>
-        <div class="bento bento-2 reveal">
-          <blockquote class="bento-card bento-card--quote glass">
+        <div class="bento bento-2 reveal stagger-group">
+          <blockquote class="bento-card bento-card--quote glass stagger-item">
             <p>"I stopped posting ab videos and started talking about hip mobility and club speed. Three members from one country club referred their entire foursome within 60 days."</p>
             <footer>
               <strong>Marcus D.</strong>
               <span>Golf Performance Coach · Austin, TX</span>
             </footer>
           </blockquote>
-          <blockquote class="bento-card bento-card--quote glass">
+          <blockquote class="bento-card bento-card--quote glass stagger-item">
             <p>"My best client is 67, plays three times a week, and pays me $800/month. He found me through the club pro — not Instagram."</p>
             <footer>
               <strong>Lauren P.</strong>
@@ -304,7 +306,7 @@
                 <option value="becoming">Want to become a golf fitness trainer</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg btn-full">Book My Strategy Call</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-full btn-shimmer">Book My Strategy Call</button>
             <p class="form-foot">Limited spots each week. No spam.</p>
           </form>
         </div>
