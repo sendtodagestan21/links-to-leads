@@ -1,66 +1,37 @@
-// Links to Leads — lead capture
+// Links to Leads — Framer-style interactions
 
 document.addEventListener("DOMContentLoaded", () => {
-  const header = document.querySelector(".site-header");
-  const modal = document.getElementById("lead-modal");
+  const nav = document.getElementById("nav");
   const heroForm = document.getElementById("book");
 
-  window.addEventListener(
-    "scroll",
-    () => {
-      header.style.boxShadow =
-        window.scrollY > 20 ? "0 4px 24px rgba(0,0,0,0.25)" : "none";
-    },
-    { passive: true }
-  );
-
-  const scrollToForm = () => {
-    if (!heroForm) return;
-    heroForm.scrollIntoView({ behavior: "smooth", block: "start" });
-    setTimeout(() => {
-      document.querySelector("#hero-form input")?.focus();
-    }, 400);
+  // Nav scroll state
+  const onScroll = () => {
+    nav?.classList.toggle("scrolled", window.scrollY > 20);
   };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
 
-  document.querySelectorAll('a[href="#book"], .header-cta').forEach((el) => {
+  // Scroll to form
+  document.querySelectorAll('a[href="#book"], .nav .btn').forEach((el) => {
     el.addEventListener("click", (e) => {
       e.preventDefault();
-      scrollToForm();
+      heroForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+      setTimeout(() => {
+        document.querySelector("#hero-form input")?.focus();
+      }, 500);
     });
   });
 
-  const closeModal = () => {
-    if (!modal) return;
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.classList.remove("modal-open");
-  };
-
-  if (modal) {
-    document.querySelectorAll("[data-close-lead-modal]").forEach((el) => {
-      el.addEventListener("click", closeModal);
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && modal.classList.contains("is-open")) {
-        closeModal();
-      }
-    });
-  }
-
-  const handleSubmit = (form) => {
+  // Form submit
+  document.querySelectorAll(".lead-form").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const original = btn.textContent;
       btn.textContent = "You're booked! Check your email.";
-      btn.style.background = "var(--green-600)";
-      btn.style.color = "white";
+      btn.style.background = "var(--green)";
+      btn.style.color = "#fff";
       btn.disabled = true;
-
-      if (modal?.classList.contains("is-open")) {
-        setTimeout(closeModal, 2500);
-      }
 
       setTimeout(() => {
         btn.textContent = original;
@@ -70,27 +41,27 @@ document.addEventListener("DOMContentLoaded", () => {
         form.reset();
       }, 4000);
     });
-  };
+  });
 
-  document.querySelectorAll(".lead-form").forEach(handleSubmit);
-
-  const revealEls = document.querySelectorAll(
-    ".step, .testimonial, .problem-card, .compare-col, .faq-item"
-  );
-
-  revealEls.forEach((el) => el.classList.add("reveal"));
-
+  // Scroll reveal
+  const revealEls = document.querySelectorAll(".reveal");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("revealed");
+          entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
   );
-
   revealEls.forEach((el) => observer.observe(el));
+
+  // Bento card stagger on hover group (subtle)
+  document.querySelectorAll(".bento-card").forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transitionDelay = "0ms";
+    });
+  });
 });
